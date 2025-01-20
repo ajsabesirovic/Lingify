@@ -345,9 +345,9 @@ header nav a[style*="display: flex"],
   }
   .user-icon .dropdown-content {
     top: -100px;
-    left: -320px;
+    left: -400px;
     right: -30px;
-    bottom: -20px;
+    bottom: -10px;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
