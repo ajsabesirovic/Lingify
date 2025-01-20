@@ -35,6 +35,9 @@ function clearTextFields() {
 
 async function translateText() {
   const inputText = inputTextElement.value.trim().toLowerCase();
+  if (outputTextElement.value) {
+    return;
+  }
   if (!inputText) {
     alert("Please enter text to translate.");
     inputTextElement.focus();

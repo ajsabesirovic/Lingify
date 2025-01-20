@@ -136,7 +136,7 @@ function renderTable() {
         <button id="clearHistory" data-id="${
           item.id
         }" onclick="deleteTranslation(this)">
-          <img src="/assets/delete.png" width="16" height="16" alt="Delete" />
+          <img src="../assets/delete.png" width="16" height="16" alt="Delete" />
         </button>
       </td>
     `;

@@ -18,7 +18,7 @@ ul {
 footer {
   text-align: center;
   padding: 10px 0;
-  background-color: #0077b6;
+  background-color: var(--primary-color);
   color: #fff;
 }
 .journey {
@@ -105,7 +105,7 @@ h3 {
   margin-bottom: 1rem;
   padding: 1rem;
   background: #f8f9fa;
-  border-left: 4px solid #0077b6;
+  border-left: 4px solid var(--primary-color);
   border-radius: 5px;
   font-size: 1rem;
   color: #333;
@@ -125,7 +125,7 @@ h3 {
 #comparison li {
   background: #f8f9fa;
   padding: 1rem;
-  border-left: 4px solid #0077b6;
+  border-left: 4px solid var(--primary-color);
   border-radius: 5px;
   margin-bottom: 1rem;
   font-size: 1rem;
@@ -139,7 +139,7 @@ h3 {
 }
 
 #comparison strong {
-  color: #0077b6;
+  color: var(--primary-color);
   font-weight: bold;
 }
 
@@ -153,13 +153,13 @@ h3 {
 }
 
 .english-card {
-  border-left-color: #0077b6;
+  border-left-color: var(--primary-color);
 }
 
 @media (max-width: 768px) {
   main {
     width: 80%;
-    margin-bottom: 60px;
+    margin-bottom: 80px;
   }
 
   .title2 {
