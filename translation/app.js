@@ -52,29 +52,70 @@ async function translateText() {
     .textContent.trim();
 
   try {
-    const response = await fetch(
+    let response = await fetch(
       `${baseUrl}?rec=${encodeURIComponent(inputText)}&jezik=${mapLanguage(
         originalLang
       )}`
     );
+
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 
-    const translatedTextResponse = await response.text();
-    if (!translatedTextResponse)
-      throw new Error(`Couldn't translate word: ${inputText}`);
-    outputTextElement.value = translatedTextResponse;
-    toggleCopyButton();
+    let translatedTextResponse = await response.text();
 
-    saveTranslation(
-      inputText,
-      translatedTextResponse,
-      `${originalLangEn}-${translatedLangEn}`,
-      `${originalLangSr}-${translatedLangSr}`
-    );
+    if (!translatedTextResponse) {
+      const alternativeLang =
+        originalLang === "English" || originalLang === "Engleski"
+          ? "srpski"
+          : "engleski";
+      response = await fetch(
+        `${baseUrl}?rec=${encodeURIComponent(inputText)}&jezik=${mapLanguage(
+          alternativeLang
+        )}`
+      );
+
+      if (!response.ok)
+        throw new Error(`HTTP error! status: ${response.status}`);
+
+      translatedTextResponse = await response.text();
+
+      if (translatedTextResponse) {
+        const confirmSwap = confirm(
+          `The word seems to be from a different language. Did you mean to translate from ${alternativeLang}?`
+        );
+
+        if (confirmSwap) {
+          swapLangs();
+          inputTextElement.value = inputText;
+          outputTextElement.value = translatedTextResponse;
+          toggleCopyButton();
+          saveTranslation(
+            inputText,
+            translatedTextResponse,
+            `${translatedLangEn}-${originalLangEn}`,
+            `${translatedLangSr}-${originalLangSr}`
+          );
+          return;
+        }
+      }
+    }
+
+    if (translatedTextResponse) {
+      outputTextElement.value = translatedTextResponse;
+      toggleCopyButton();
+      saveTranslation(
+        inputText,
+        translatedTextResponse,
+        `${originalLangEn}-${translatedLangEn}`,
+        `${originalLangSr}-${translatedLangSr}`
+      );
+    } else {
+      throw new Error(`Couldn't translate word: ${inputText}`);
+    }
   } catch (error) {
     alert("An error occurred while translating. Please try again.");
   }
 }
+
 function swapLangs() {
   document
     .querySelectorAll(".originalLang, .translatedLang")
@@ -166,7 +207,11 @@ function saveTranslation(
       JSON.stringify(translationHistory)
     );
   } catch (error) {
-    alert("An error occurred while saving the translation history.");
+    let msg =
+      this.lang === "en"
+        ? "An error occurred while saving the translation history."
+        : "Došlo je do greške pri čuvanju istorije prevoda.";
+    alert(msg);
   }
 }
 

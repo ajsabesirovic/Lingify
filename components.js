@@ -231,7 +231,6 @@ class Header extends HTMLElement {
     });
 
     logoutButton.addEventListener("click", (e) => {
-      console.log("click");
       e.preventDefault();
       this.logout();
     });
@@ -329,7 +328,11 @@ class Header extends HTMLElement {
       logoLink.href = "#";
       logoLink.addEventListener("click", (e) => {
         e.preventDefault();
-        alert("Please log in to access the homepage.");
+        let msg =
+          this.lang === "en"
+            ? "Please log in to access the homepage."
+            : "Molimo Vas, ulogujte se kako bi pristupili home stranici.";
+        alert(msg);
       });
     }
     this.updateActiveLink();

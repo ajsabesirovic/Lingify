@@ -118,7 +118,11 @@ function nextFlashcard() {
 
   if (currentCard === 0) {
     endSession();
-    alert("Congratulations! You've completed a full round!");
+    let msg =
+      this.lang === "en"
+        ? "Congratulations! You've completed a full round!"
+        : "Čestitamo! Završili ste rundu!";
+    alert(msg);
     cardsReviewed = 0;
     session.textContent = "0:00";
   }

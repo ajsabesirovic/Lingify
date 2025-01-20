@@ -22,7 +22,11 @@ document.addEventListener("DOMContentLoaded", async () => {
         ? "../assets/padlock-unlock.png"
         : "../assets/secured-lock.png";
     } else {
-      alert("You have to type in the password to be able to see it.");
+      let msg =
+        this.lang === "en"
+          ? "You have to type in the password to be able to see it."
+          : "Morate da unesete lozinku da biste mogli da je vidite.";
+      alert(msg);
     }
   });
 
@@ -47,7 +51,11 @@ document.addEventListener("DOMContentLoaded", async () => {
       window.location.href = "../facts/index.html";
     } else {
       localStorage.setItem("isLoggedIn", "false");
-      alert("Invalid username or password. Please try again.");
+      let msg =
+        this.lang === "en"
+          ? "Invalid username or password. Please try again."
+          : "Nevažeće korisničko ime ili lozinka. Pokušajte ponovo.";
+      alert(msg);
     }
   });
 

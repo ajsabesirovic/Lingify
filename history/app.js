@@ -3,7 +3,7 @@ let translations = localStorage.getItem("translationHistory")
   : [];
 let currentPage = 1;
 let rowsPerPage = window.innerWidth > 768 ? 10 : translations.length;
-const lang = localStorage.getItem("language");
+let lang = localStorage.getItem("language");
 
 document.addEventListener("DOMContentLoaded", () => {
   updateRowsPerPageVisibility();
@@ -223,7 +223,6 @@ document.getElementById("dateFilter").addEventListener("change", () => {
 
 document.getElementById("rowsPerPage").addEventListener("change", (e) => {
   rowsPerPage = parseInt(e.target.value);
-  console.log(e.target.value);
   currentPage = 1;
   renderTable();
 });
@@ -253,4 +252,20 @@ document.getElementById("lastPage").addEventListener("click", () => {
   renderTable();
 });
 
-renderTable();
+document.addEventListener("DOMContentLoaded", () => {
+  renderTable();
+  const mainHeader = document.querySelector("main-header");
+  if (mainHeader && typeof mainHeader.switchLanguage === "function") {
+    const originalSwitchLanguage = mainHeader.switchLanguage.bind(mainHeader);
+
+    mainHeader.switchLanguage = (language) => {
+      originalSwitchLanguage(lang);
+      lang = language;
+      renderTable();
+    };
+  } else {
+    console.error(
+      "main-header component not found or switchLanguage method is not defined."
+    );
+  }
+});
