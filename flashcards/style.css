@@ -82,6 +82,7 @@
     flex-direction: column;
     gap: 1rem;
     width: 80%;
+    margin-bottom: 30px;
   }
   .title {
     font-size: 3.5rem;

@@ -173,6 +173,10 @@ h1 {
     width: 80%;
   }
 
+  .hero-image img {
+    display: none;
+  }
+
   .rotating-world {
     max-width: 250px;
   }

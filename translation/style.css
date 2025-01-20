@@ -167,7 +167,7 @@ main span img {
 
   main {
     padding: 0;
-    margin: auto;
+    margin: calc(94px + 5vh) 0;
     width: auto;
   }
 

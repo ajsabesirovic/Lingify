@@ -125,6 +125,10 @@ input:focus {
   .hand-image {
     display: none;
   }
+
+  .main_footer-mobile {
+    display: none;
+  }
 }
 
 .subtitle {

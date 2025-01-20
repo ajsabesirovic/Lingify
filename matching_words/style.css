@@ -85,11 +85,11 @@ body {
   #game-board {
     grid-template-columns: repeat(3, 1fr);
     max-width: 340px;
-    gap: 6px;
+    gap: 0;
   }
   .container {
     height: auto;
-    padding: 5rem 0;
+    padding: 1rem 0;
   }
   .card-front,
   .card-back {
