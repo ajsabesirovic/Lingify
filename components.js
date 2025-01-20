@@ -231,6 +231,7 @@ class Header extends HTMLElement {
     });
 
     logoutButton.addEventListener("click", (e) => {
+      console.log("click");
       e.preventDefault();
       this.logout();
     });
