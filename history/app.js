@@ -3,12 +3,7 @@ let translations = localStorage.getItem("translationHistory")
   : [];
 let currentPage = 1;
 let rowsPerPage = window.innerWidth > 768 ? 10 : translations.length;
-let lang = localStorage.getItem("language");
-
-document.addEventListener("DOMContentLoaded", () => {
-  updateRowsPerPageVisibility();
-  renderTable();
-});
+let lang = localStorage.getItem("language") || "en";
 
 function updateRowsPerPageVisibility() {
   const rowsPerPageElement = document.getElementById("rowsPerPage");
@@ -253,13 +248,14 @@ document.getElementById("lastPage").addEventListener("click", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+  updateRowsPerPageVisibility();
   renderTable();
   const mainHeader = document.querySelector("main-header");
   if (mainHeader && typeof mainHeader.switchLanguage === "function") {
     const originalSwitchLanguage = mainHeader.switchLanguage.bind(mainHeader);
 
     mainHeader.switchLanguage = (language) => {
-      originalSwitchLanguage(lang);
+      originalSwitchLanguage(language);
       lang = language;
       renderTable();
     };
