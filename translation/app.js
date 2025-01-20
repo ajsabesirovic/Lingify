@@ -6,6 +6,7 @@ const inputTextElement = document.getElementById("inputText");
 const outputTextElement = document.getElementById("outputText");
 const copyButton = document.getElementById("copyButton");
 const tooltip = document.getElementById("myTooltip");
+const lang = localStorage.getItem("language") || "en";
 
 document.getElementById("clearText").addEventListener("click", clearTextFields);
 document
@@ -40,7 +41,7 @@ async function translateText() {
   }
   if (!inputText) {
     let msg =
-      this.lang === "en"
+      lang === "en"
         ? "Please enter text to translate."
         : "Unesite tekst za prevod.";
     alert(msg);
@@ -117,7 +118,7 @@ async function translateText() {
     }
   } catch (error) {
     let msg =
-      this.lang === "en"
+      lang === "en"
         ? "An error occurred while translating. Please try again."
         : "Došlo je do greške pri prevođenju. Pokušajte ponovo.";
     alert(msg);
@@ -216,7 +217,7 @@ function saveTranslation(
     );
   } catch (error) {
     let msg =
-      this.lang === "en"
+      lang === "en"
         ? "An error occurred while saving the translation history."
         : "Došlo je do greške pri čuvanju istorije prevoda.";
     alert(msg);

@@ -23,7 +23,7 @@ let sessionTimer;
 let cardsReviewed = 0;
 let sessionStarted = false;
 const session = document.getElementById("session-time");
-
+const lang = localStorage.getItem("language") || "en";
 if (!localStorage.getItem("flashcardStats")) {
   localStorage.setItem(
     "flashcardStats",
@@ -119,7 +119,7 @@ function nextFlashcard() {
   if (currentCard === 0) {
     endSession();
     let msg =
-      this.lang === "en"
+      lang === "en"
         ? "Congratulations! You've completed a full round!"
         : "Čestitamo! Završili ste rundu!";
     alert(msg);

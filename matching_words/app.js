@@ -25,6 +25,7 @@ if (!localStorage.getItem("wordMatchStats")) {
     })
   );
 }
+const lang = localStorage.getItem("language") || "en";
 
 function startTimer() {
   startTime = Date.now();
@@ -144,7 +145,11 @@ function checkMatch() {
       const totalTime = stopTimer();
       const timeString = formatTime(totalTime);
       setTimeout(() => {
-        alert(`Congratulations! You won in ${timeString}!`);
+        let msg =
+          lang === "en"
+            ? `Congratulations! You won in ${timeString}!`
+            : "Čestitamo! Pobedili ste!";
+        alert(msg);
         resetGame();
       }, 300);
     }

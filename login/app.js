@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const passwordInput = document.getElementById("password");
   const passwordToggle = document.querySelector(".show-password");
   const img = passwordToggle.querySelector("img");
+  const lang = localStorage.getItem("language") || "en";
 
   let users = [];
 
@@ -23,7 +24,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         : "../assets/secured-lock.png";
     } else {
       let msg =
-        this.lang === "en"
+        lang === "en"
           ? "You have to type in the password to be able to see it."
           : "Morate da unesete lozinku da biste mogli da je vidite.";
       alert(msg);
@@ -52,7 +53,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     } else {
       localStorage.setItem("isLoggedIn", "false");
       let msg =
-        this.lang === "en"
+        lang === "en"
           ? "Invalid username or password. Please try again."
           : "Nevažeće korisničko ime ili lozinka. Pokušajte ponovo.";
       alert(msg);
