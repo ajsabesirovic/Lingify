@@ -1,0 +1,73 @@
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin: 2rem auto;
+}
+
+.progress-section {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin-bottom: 2rem;
+}
+
+.progress-section h2 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.stat-card {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-card h3 {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.stat-card p {
+  color: #3498db;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+@media (max-width: 768px) {
+  .stat-card {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0.7rem;
+  }
+  .stat-card h3 {
+    margin-bottom: 0;
+  }
+  .stat-card p {
+    font-size: 1.2rem;
+  }
+  .progress-section:last-child {
+    margin-bottom: 6rem;
+  }
+}

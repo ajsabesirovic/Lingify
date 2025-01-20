@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-lang-en="Quiz" data-lang-sr="Kviz">Quiz Game</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Just Another Hand"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../global.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main-header></main-header>
+    <main class="quiz-container">
+      <h1
+        class="quiz-title"
+        data-lang-en="Translation Quiz"
+        data-lang-sr="Kviz za prevođenje"
+      >
+        Translation Quiz
+      </h1>
+      <div class="quiz-card">
+        <div class="question" id="question"></div>
+        <div class="options" id="options"></div>
+        <div class="feedback" id="feedback">"</div>
+        <button
+          class="next-btn"
+          id="nextBtn"
+          data-lang-en="Next Question"
+          data-lang-sr="Sledeće pitanje"
+        >
+          Next Question
+        </button>
+      </div>
+      <div class="stats-bar">
+        <div class="stat-item">
+          <span data-lang-en="Session Time:" data-lang-sr="Vreme sesije:"
+            >Session Time:</span
+          >
+          <span id="session-time">0:00</span>
+        </div>
+        <div class="stat-item">
+          <span data-lang-en="Progress:" data-lang-sr="Napredak:"
+            >Progress:</span
+          >
+          <span id="current-progress">1/15</span>
+        </div>
+      </div>
+    </div>
+
+    </main>
+
+    <main-footer></main-footer>
+
+    <script src="app.js"></script>
+    <script src="../components.js"></script>
+  </body>
+</html>

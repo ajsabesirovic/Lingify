@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-lang-en="Contact Us" data-lang-sr="Kontaktirajte nas">
+      Contact Us
+    </title>
+    <link rel="stylesheet" href="../global.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Just Another Hand"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main-header></main-header>
+    <div class="outer-container">
+      <div>
+        <h1
+          data-lang-en="HOW CAN WE HELP?"
+          data-lang-sr="KAKO MOŽEMO DA POMOGNEMO?"
+        >
+          HOW CAN WE HELP?
+        </h1>
+        <p
+          class="subtitle"
+          data-lang-en="Send us a message!"
+          data-lang-sr="Pošaljite nam poruku!"
+        >
+          Send us a message!
+        </p>
+      </div>
+
+      <div class="container">
+        <div class="contact-info">
+          <div class="info-section">
+            <h3 data-lang-en="Address" data-lang-sr="Adresa">Address</h3>
+            <p data-lang-en="601 E Reunion St" data-lang-sr="601 E Rijuion St">
+              601 E Reunion St
+            </p>
+            <p
+              data-lang-en="Fairfield, Texas(TX), 75840"
+              data-lang-sr="Ferfild, Teksas (TX), 75840"
+            >
+              Fairfield, Texas(TX), 75840
+            </p>
+          </div>
+          <hr />
+          <div class="info-section">
+            <h3 data-lang-en="Email" data-lang-sr="E-mail">Email</h3>
+            <p
+              data-lang-en="lingify@lingify.app"
+              data-lang-sr="lingify@lingify.app"
+            >
+              lingify@lingify.app
+            </p>
+          </div>
+          <hr />
+          <div class="info-section">
+            <h3 data-lang-en="Phone" data-lang-sr="Telefon">Phone</h3>
+            <p data-lang-en="(903) 389-9401" data-lang-sr="(903) 389-9401">
+              (903) 389-9401
+            </p>
+          </div>
+        </div>
+
+        <div class="contact-info-mobile">
+          <div class="info-section">
+            <p data-lang-en="601 E Reunion St" data-lang-sr="601 E Rijuion St">
+              601 E Reunion St
+            </p>
+            <p
+              data-lang-en="Fairfield, Texas(TX), 75840"
+              data-lang-sr="Ferfild, Teksas (TX), 75840"
+            >
+              Fairfield, Texas(TX), 75840
+            </p>
+          </div>
+          <div class="info-section">
+            <p
+              data-lang-en="lingify@lingify.app"
+              data-lang-sr="lingify@lingify.app"
+            >
+              lingify@lingify.app
+            </p>
+            <p data-lang-en="(903) 389-9401" data-lang-sr="(903) 389-9401">
+              (903) 389-9401
+            </p>
+          </div>
+        </div>
+
+        <form id="contactForm" class="contact-form">
+          <div class="form-row">
+            <div class="input-group">
+              <input
+                type="text"
+                id="firstName"
+                placeholder="First Name"
+                required
+                data-lang-en="First Name"
+                data-lang-sr="Ime"
+              />
+              <span class="error-message" id="firstNameError"></span>
+            </div>
+            <div class="input-group">
+              <input
+                type="text"
+                id="lastName"
+                placeholder="Last Name"
+                required
+                data-lang-en="Last Name"
+                data-lang-sr="Prezime"
+              />
+              <span class="error-message" id="lastNameError"></span>
+            </div>
+          </div>
+          <input
+            type="email"
+            id="email"
+            placeholder="Email"
+            disabled
+            data-lang-en="Email"
+            data-lang-sr="E-mail"
+          />
+          <textarea
+            id="message"
+            placeholder="Message..."
+            required
+            data-lang-en="Message..."
+            data-lang-sr="Poruka..."
+          ></textarea>
+          <span class="error-message" id="messageError"></span>
+
+          <button
+            type="submit"
+            class="send-button"
+            data-lang-en="Send"
+            data-lang-sr="Pošalji"
+          >
+            Send
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <main-footer></main-footer>
+    <script src="../components.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

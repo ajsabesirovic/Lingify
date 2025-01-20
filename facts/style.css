@@ -1,0 +1,187 @@
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+section {
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style-type: square;
+  margin: 10px 0;
+  padding-left: 20px;
+}
+footer {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #0077b6;
+  color: #fff;
+}
+.journey {
+  font-family: "Just Another Hand";
+  font-weight: 500;
+  color: var(--primary-color);
+}
+h3 {
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+.alphabet {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--primary-color);
+}
+.language-cards {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+.language-card {
+  width: 45%;
+}
+.card {
+  background-color: rgb(255, 255, 255);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
+    rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+  flex: 1;
+  max-width: 400px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+  animation: fadeIn 1s ease-in;
+}
+
+.title2 {
+  font-size: 3rem;
+  margin: 0;
+  margin-top: 4rem;
+  color: #333;
+}
+
+.subtitle {
+  color: var(--primary-color);
+  opacity: 0.8;
+  font-family: "Just Another Hand";
+  font-size: 2.5rem;
+}
+#facts,
+#comparison {
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+#facts h2,
+#comparison h2 {
+  text-align: start;
+  font-size: 1.5rem;
+  color: #333;
+  text-decoration: underline;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+#facts ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#facts ul li {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-left: 4px solid #0077b6;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #333;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+#facts ul li:hover {
+  transform: translateX(10px);
+  background-color: #e9f5fc;
+}
+
+#comparison ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#comparison li {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-left: 4px solid #0077b6;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #333;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+#comparison li:hover {
+  transform: translateY(-5px);
+  background-color: #e9f5fc;
+}
+
+#comparison strong {
+  color: #0077b6;
+  font-weight: bold;
+}
+
+#facts ul li em,
+#comparison p em {
+  font-style: italic;
+  color: #555;
+}
+.serbian-card {
+  border-left-color: #d62828;
+}
+
+.english-card {
+  border-left-color: #0077b6;
+}
+
+@media (max-width: 768px) {
+  main {
+    width: 80%;
+    margin-bottom: 60px;
+  }
+
+  .title2 {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1.75rem;
+  }
+
+  #facts h2,
+  #comparison h2 {
+    font-size: 1.15rem;
+  }
+
+  .language-cards {
+    flex-direction: column;
+  }
+  .language-card {
+    width: 100%;
+  }
+  .serbFacts {
+    margin-bottom: 2rem;
+  }
+}

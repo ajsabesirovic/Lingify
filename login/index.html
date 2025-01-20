@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-lang-en="Sign in"
+    data-lang-sr="Prijavite se">Sign in</title>
+    <link rel="stylesheet" href="../global.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Just Another Hand"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="login-page">
+    <main-header></main-header>
+
+    <div class="pozadina">
+      <img src="../assets/image.svg" class="hand-image">
+      <div class="form-container">
+        <h1 data-lang-en="Sign in" data-lang-sr="Prijavite se">Sign in</h1>
+        <div class="text-container">
+          <p class="subtitle" data-lang-en="Experience fast translations with" data-lang-sr="Prevedite neke reči">
+            Enjoy fast translations with
+          </p>
+          <span class="sp">Lingify</span>
+        </div> 
+          <form id="signInForm" class="sign-in-form">
+          <input
+            type="text"
+            id="username"
+            placeholder="Username"
+            data-lang-en="Username"
+            data-lang-sr="Korisničko ime"
+            required
+          />
+          <div class="password-container">
+            <input
+              type="password"
+              id="password"
+              placeholder="Password"
+              data-lang-en="Password"
+              data-lang-sr="Lozinka"
+              required
+            />
+            <button class="show-password">
+              <img src="../assets/secured-lock.png" width="20" height="20" alt="">
+            </button>
+          </div>
+          <button
+            type="submit"
+            class="sign-in-button"
+            data-lang-en="Sign in"
+            data-lang-sr="Prijavite se"
+          >
+            Sign in
+          </button>
+        </form>
+      </div>
+    </div>
+     
+    </div>
+    <main-footer></main-footer>
+
+    <script src="app.js"></script>
+    <script src="../components.js"></script>
+  </body>
+</html>

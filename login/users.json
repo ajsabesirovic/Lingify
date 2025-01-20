@@ -1,0 +1,14 @@
+[
+  {
+    "email": "user1@user1.com",
+    "username": "user1",
+    "password": "35548686173188d5c53a00f36b4fe31f7cbdd66d0cc31b50e64d79619eb9882f",
+    "initials": "U1"
+  },
+  {
+    "email": "user2@user2.com",
+    "username": "user2",
+    "password": "bc5848f227cc161eb5f68dfe98cb13110a9c843ce69e953a88107d865583d397",
+    "initials": "U2"
+  }
+]

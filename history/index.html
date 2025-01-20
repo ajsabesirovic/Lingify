@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title
+      data-lang-en="Translation history"
+      data-lang-sr="Istorija prevođenja"
+    >
+      Translation History
+    </title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../global.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Just Another Hand"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main-header></main-header>
+    <div class="container">
+      <div class="filters-container">
+        <div class="search-bar">
+          <input
+            type="text"
+            id="search"
+            placeholder="Search..."
+            data-lang-en="Search..."
+            data-lang-sr="Pretraži..."
+          />
+          <button
+            id="deleteAllBtn"
+            class="delete-all-btn"
+            onclick="deleteSelected()"
+            data-lang-en="Delete Selected"
+            data-lang-sr="Obriši izabrano"
+          >
+            Delete Selected
+          </button>
+          <div id="selectAll" class="selectBtn" onclick="selectAll()">
+            <input type="checkbox" id="all" />
+          </div>
+        </div>
+
+        <div class="filters">
+          <label class="favorite-filter">
+            <input type="checkbox" id="favoriteFilter" />
+            <span data-lang-en="Favorites" data-lang-sr="Omiljeno">
+              Favorites
+            </span>
+          </label>
+
+          <select id="langPairFilter">
+            <option
+              value=""
+              data-lang-en="All Language Pairs"
+              data-lang-sr="Svi jezički parovi"
+            >
+              All Language Pairs
+            </option>
+            <option
+              value="English-Serbian"
+              data-lang-en="English - Serbian"
+              data-lang-sr="Engleski - Srpski"
+            >
+              English - Serbian
+            </option>
+            <option
+              value="Serbian-English"
+              data-lang-en="Serbian - English"
+              data-lang-sr="Srpski - Engleski"
+            >
+              Serbian - English
+            </option>
+          </select>
+
+          <select id="dateFilter">
+            <option value="" data-lang-en="All Dates" data-lang-sr="Svi datumi">
+              All Dates
+            </option>
+            <option value="today" data-lang-en="Today" data-lang-sr="Danas">
+              Today
+            </option>
+            <option
+              value="week"
+              data-lang-en="This Week"
+              data-lang-sr="Ove nedelje"
+            >
+              This Week
+            </option>
+            <option
+              value="month"
+              data-lang-en="This Month"
+              data-lang-sr="Ovaj mesec"
+            >
+              This Month
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th class="checkbox-column"></th>
+              <th data-lang-en="DATE" data-lang-sr="DATUM">DATE</th>
+              <th data-lang-en="ORIGINAL" data-lang-sr="ORIGINAL">ORIGINAL</th>
+              <th data-lang-en="TRANSLATION" data-lang-sr="PREVOD">
+                TRANSLATION
+              </th>
+              <th data-lang-en="LANGUAGE PAIR" data-lang-sr="JEZIČKI PAR">
+                LANGUAGE PAIR
+              </th>
+              <th data-lang-en="ACTIONS" data-lang-sr="AKCIJE">ACTIONS</th>
+            </tr>
+          </thead>
+          <tbody id="translationTableBody"></tbody>
+        </table>
+      </div>
+
+      <div class="pagination">
+        <div class="pagination-controls">
+          <button id="firstPage" data-lang-en="«" data-lang-sr="«">«</button>
+          <button id="prevPage" data-lang-en="‹" data-lang-sr="‹">‹</button>
+          <span id="currentPage">1</span>
+          <button id="nextPage" data-lang-en="›" data-lang-sr="›">›</button>
+          <button id="lastPage" data-lang-en="»" data-lang-sr="»">»</button>
+        </div>
+
+        <div class="rows-per-page">
+          <span data-lang-en="Rows per page" data-lang-sr="Redovi po stranici">
+            Rows per page
+          </span>
+          <select id="rowsPerPage">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="25">25</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-no-data">
+      <div class="calendar-icon">
+        <div class="calendar-top"></div>
+        <div class="calendar-body">
+          <div class="calendar-face">
+            <div class="eyes"></div>
+            <div class="mouth"></div>
+          </div>
+        </div>
+        <div class="dots">
+          <div class="dot dot1"></div>
+          <div class="dot dot2"></div>
+        </div>
+      </div>
+      <h1 data-lang-en="OMG!" data-lang-sr="OMG!">OMG!</h1>
+      <p
+        class="p"
+        data-lang-en="You have no history data."
+        data-lang-sr="Nemate podatke o istoriji."
+      >
+        You have no history data.
+      </p>
+      <p
+        class="p subtitle"
+        data-lang-en="Let's change that!"
+        data-lang-sr="Hajde da to promenimo!"
+      >
+        Let's change that!
+      </p>
+      <button
+        class="add-event-btn"
+        onclick="startTranslating()"
+        data-lang-en="Start translating"
+        data-lang-sr="Počni prevođenje"
+      >
+        Start translating
+      </button>
+    </div>
+    <main-footer></main-footer>
+    <script src="app.js"></script>
+    <script src="../components.js"></script>
+  </body>
+</html>

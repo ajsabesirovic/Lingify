@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-lang-en="Translator" data-lang-sr="Prevodilac">
+      Translator
+    </title>
+    <link rel="stylesheet" href="../global.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Just Another Hand"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main-header></main-header>
+
+    <main>
+      <p
+        data-lang-en="Get a quick, free translation!"
+        data-lang-sr="Dobijte
+        brzi,
+        besplatni prevod!"
+      >
+        Get a quick, free translation!<br />
+      </p>
+
+      <p
+        data-lang-en="Type your text and click Translate to see the translation."
+        data-lang-sr="Unesite tekst i kliknite Prevedi da vidite prevod."
+      >
+        Type your text and click Translate to see the translation.
+      </p>
+      <div class="translator">
+        <div class="mobile-btns">
+          <button
+            class="lang-btn-mobile active originalLang"
+            data-lang-en="English"
+            data-lang-sr="Engleski"
+          >
+            English
+          </button>
+          <div class="swap-icon-mobile swap desktopSwap">⇆</div>
+          <button
+            class="lang-btn-mobile translatedLang"
+            data-lang-en="Serbian"
+            data-lang-sr="Srpski"
+          >
+            Serbian
+          </button>
+        </div>
+
+        <div class="input-section">
+          <button
+            class="lang-btn active originalLang"
+            data-lang-en="English"
+            data-lang-sr="Engleski"
+          >
+            English
+          </button>
+          <textarea
+            cols="50"
+            rows="10"
+            id="inputText"
+            placeholder="Enter text here"
+            data-lang-en="Enter text here"
+            data-lang-sr="Unesite tekst ovde"
+          ></textarea>
+          <button id="clearText" class="clear-btn">✖</button>
+        </div>
+        <div class="swap-icon swap mobileSwap">⇆</div>
+        <div class="output-section">
+          <button
+            class="lang-btn translatedLang"
+            data-lang-en="Serbian"
+            data-lang-sr="Srpski"
+          >
+            Serbian
+          </button>
+
+          <textarea
+            cols="50"
+            rows="10"
+            id="outputText"
+            class="output-text"
+            disabled
+            readonly
+          >
+          </textarea>
+          <div class="tooltip" id="copyButton">
+            <button
+              onclick="myFunction()"
+              onmouseout="outFunc()"
+              type="button"
+              disabled
+            >
+              <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+              <img
+                src="../assets/paste.png"
+                width="17"
+                height="17"
+                alt="Copy"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+      <button
+        id="translateBtn"
+        class="translate-btn"
+        data-lang-en="Translate"
+        data-lang-sr="Prevedi"
+      >
+        Translate
+      </button>
+    </main>
+
+    <main-footer></main-footer>
+    <script src="app.js"></script>
+    <script src="../components.js"></script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title
+      data-lang-en="Word-Translation Matching"
+      data-lang-sr="Povezivanje reči"
+    >
+      Word-Translation Matching
+    </title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../global.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Just+Another+Hand"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main-header></main-header>
+
+    <div class="container">
+      <h1
+        class="name"
+        data-lang-en="Word-Translation Matching"
+        data-lang-sr="Podudaranje reči i prevoda"
+      >
+        Word-Translation Matching
+      </h1>
+
+      <div id="game-board"></div>
+      <div class="stats-bar">
+        <div class="stat-item">
+          <span data-lang-en="Session Time:" data-lang-sr="Vreme sesije:"
+            >Session Time:</span
+          >
+          <span id="session-time">0:00</span>
+        </div>
+
+        <div class="stat-item">
+          <span data-lang-en="Matches:" data-lang-sr="Podudaranja:"
+            >Matches:</span
+          >
+          <span id="scr">0</span>
+        </div>
+      </div>
+    </div>
+
+    <main-footer></main-footer>
+    <script src="app.js"></script>
+    <script src="../components.js"></script>
+  </body>
+</html>
