@@ -187,6 +187,11 @@ input:disabled {
     height: 45vh;
   }
 
+  .outer-container {
+    margin: 2rem 0;
+    margin-bottom: 6rem;
+  }
+
   .contact-info {
     display: none;
   }
