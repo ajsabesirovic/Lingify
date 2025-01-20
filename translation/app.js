@@ -39,7 +39,11 @@ async function translateText() {
     return;
   }
   if (!inputText) {
-    alert("Please enter text to translate.");
+    let msg =
+      this.lang === "en"
+        ? "Please enter text to translate."
+        : "Unesite tekst za prevod.";
+    alert(msg);
     inputTextElement.focus();
     return;
   }
@@ -112,7 +116,11 @@ async function translateText() {
       throw new Error(`Couldn't translate word: ${inputText}`);
     }
   } catch (error) {
-    alert("An error occurred while translating. Please try again.");
+    let msg =
+      this.lang === "en"
+        ? "An error occurred while translating. Please try again."
+        : "Došlo je do greške pri prevođenju. Pokušajte ponovo.";
+    alert(msg);
   }
 }
 
