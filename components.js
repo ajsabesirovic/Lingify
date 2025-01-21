@@ -350,6 +350,15 @@ class Header extends HTMLElement {
 
   logout() {
     localStorage.setItem("isLoggedIn", "false");
+    localStorage.removeItem("userEmail");
+    localStorage.removeItem("userInitials");
+    localStorage.removeItem("gameEn");
+    localStorage.removeItem("gameSr");
+    localStorage.removeItem("selectedItem");
+    localStorage.removeItem("currentGame");
+    localStorage.removeItem("quizStats");
+    localStorage.removeItem("flashcardStats");
+    localStorage.removeItem("wordMatchStats");
     this.isLoggedIn = false;
     this.updateNavigation();
     window.location.href = "../login/index.html";

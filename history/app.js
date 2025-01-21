@@ -156,12 +156,13 @@ function updateDeleteButton() {
 }
 function deleteSelected() {
   const checkedBoxes = document.querySelectorAll(".row-checkbox:checked");
+  let msg =
+    lang === "en"
+      ? `Are you sure you want to delete ${checkedBoxes.length} selected items?`
+      : `Da li ste sigurni da želite da izbrišete ${checkedBoxes.length} izabrane stavke?
+  `;
   if (checkedBoxes.length === 0) return;
-  if (
-    confirm(
-      `Are you sure you want to delete ${checkedBoxes.length} selected items?`
-    )
-  ) {
+  if (confirm(msg)) {
     const selectedIds = Array.from(checkedBoxes).map((box) => +box.dataset.id);
     translations = translations.filter(
       (item) => !selectedIds.includes(item.id)
@@ -175,7 +176,12 @@ function deleteSelected() {
   }
 }
 function deleteTranslation(button) {
-  if (confirm("Are you sure you want to delete this translation?")) {
+  let msg =
+    lang === "en"
+      ? "Are you sure you want to delete this translation?"
+      : "Da li ste sigurni da želite da izbrišete ovaj prevod?";
+
+  if (confirm(msg)) {
     translations = translations.filter(
       (item) => item.id !== +button.dataset.id
     );

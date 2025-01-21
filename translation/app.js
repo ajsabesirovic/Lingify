@@ -6,7 +6,7 @@ const inputTextElement = document.getElementById("inputText");
 const outputTextElement = document.getElementById("outputText");
 const copyButton = document.getElementById("copyButton");
 const tooltip = document.getElementById("myTooltip");
-const lang = localStorage.getItem("language") || "en";
+let lang = localStorage.getItem("language") || "en";
 
 document.getElementById("clearText").addEventListener("click", clearTextFields);
 document
@@ -84,9 +84,17 @@ async function translateText() {
       translatedTextResponse = await response.text();
 
       if (translatedTextResponse) {
-        const confirmSwap = confirm(
-          `The word seems to be from a different language. Did you mean to translate from ${alternativeLang}?`
-        );
+        let altLang;
+        if (lang == "en") {
+          altLang = alternativeLang == "engleski" ? "English" : "Serbian";
+        } else {
+          altLang = alternativeLang == "engleski" ? "Engleskog" : "Srpskog";
+        }
+        let msg =
+          lang == "en"
+            ? `The word seems to be from a different language. Did you mean to translate from ${altLang}?`
+            : `Čini se da je reč iz drugog jezika. Da li ste hteli da prevedete sa ${altLang}?`;
+        const confirmSwap = confirm(msg);
 
         if (confirmSwap) {
           swapLangs();
@@ -232,3 +240,19 @@ function debounce(func, delay) {
   };
 }
 toggleCopyButton();
+
+document.addEventListener("DOMContentLoaded", () => {
+  const mainHeader = document.querySelector("main-header");
+  if (mainHeader && typeof mainHeader.switchLanguage === "function") {
+    const originalSwitchLanguage = mainHeader.switchLanguage.bind(mainHeader);
+
+    mainHeader.switchLanguage = (language) => {
+      originalSwitchLanguage(language);
+      lang = language;
+    };
+  } else {
+    console.error(
+      "main-header component not found or switchLanguage method is not defined."
+    );
+  }
+});
