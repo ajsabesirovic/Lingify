@@ -12,7 +12,7 @@ const messageError = document.getElementById("messageError");
 email.value = localStorage.getItem("userEmail") || "";
 
 email.style.color = "var(--primary-color)";
-const nameRegex = /^[A-Z | a-z]{3,}$/;
+const nameRegex = /^[A-Za-z]{3,}$/;
 let isValid = true;
 
 function validateForm(lang = localStorage.getItem("language")) {

@@ -72,6 +72,7 @@ async function translateText() {
         originalLang === "English" || originalLang === "Engleski"
           ? "srpski"
           : "engleski";
+
       response = await fetch(
         `${baseUrl}?rec=${encodeURIComponent(inputText)}&jezik=${mapLanguage(
           alternativeLang
