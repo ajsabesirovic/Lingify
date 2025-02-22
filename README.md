@@ -18,3 +18,7 @@ You can access the app here: **[Lingify](https://lingify.pages.dev/)**
    ```
 3. Open `index.html` in your browser or use a local server for testing.
 
+## Credentials
+
+username: user1
+password: User123.
