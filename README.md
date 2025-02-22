@@ -10,7 +10,7 @@ You can access the app here: **[Lingify](https://lingify.pages.dev/)**
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/lingify.git
+   git clone https://github.com/yourusername/Lingify.git
    ```
 2. Navigate to the project folder:
    ```sh
